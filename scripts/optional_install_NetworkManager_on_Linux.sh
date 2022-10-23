@@ -37,6 +37,7 @@ install_network_manager () {
     
     # sleeping for 30 seconds
     echo "Sleeping 30 seconds, ctrl+z, disown, bg"
+    /bin/sleep 30
 
     echo "Stopping dhcpcd..."
     systemctl stop dhcpcd
