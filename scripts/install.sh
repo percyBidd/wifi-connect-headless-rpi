@@ -17,6 +17,10 @@ TOPDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TOPDIR+=/..
 cd $TOPDIR
 
+# installing pip3 and venv..  Raspberry lite does not have them
+apt-get install -y python3-pip
+apt-get install -y python3-venv
+
 # Check if python3 and pip are installed
 echo "Checking that python3 and pip are installed..."
 INSTALL_PATH=`which python3`
@@ -32,10 +36,6 @@ fi
 
 # Remove any existing virtual environment
 rm -fr $TOPDIR/venv
-
-# installing pip3 and venv..  Raspberry lite does not have them
-apt-get install -y python3-pip
-apt-get install -y python3-venv
 
 # Create a virtual environment (venv)
 echo "Creating a python virtual environment..."
