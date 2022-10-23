@@ -7,6 +7,10 @@
 import NetworkManager
 import uuid, os, sys, time, socket
 
+# This is needed to work with NetworkManager 1.30.6 and python-networkmanager 2.2      
+from dbus.mainloop.glib import DBusGMainLoop
+DBusGMainLoop(set_as_default = True)
+
 HOTSPOT_CONNECTION_NAME = 'hotspot'
 GENERIC_CONNECTION_NAME = 'python-wifi-connect'
 
@@ -77,6 +81,8 @@ def get_list_of_access_points():
     NM_SECURITY_WPA        = 0x2
     NM_SECURITY_WPA2       = 0x4
     NM_SECURITY_ENTERPRISE = 0x8
+   
+    
 
     ssids = [] # list we return
 
