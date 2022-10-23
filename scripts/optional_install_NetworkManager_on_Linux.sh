@@ -26,20 +26,35 @@ install_network_manager () {
     echo "Updating Debian package list..."
     apt-get update
 
-    echo "Downloading NetworkManager..."
-    apt-get install -y -d network-manager
+    echo "Downloading and installing NetworkManager..."
+    apt-get install -y network-manager
+    
+    echo "enabling Network Manager"
+    systemctl enable NetworkManager
+    echo "disabling dhcpcd
+    systemctl disable dhcpcd
+
+    
+    # sleeping for 30 seconds
+    echo "Sleeping 30 seconds, ctrl+z, disown, bg"
 
     echo "Stopping dhcpcd..."
     systemctl stop dhcpcd
-    systemctl disable dhcpcd
-        
-    echo "Installing NetworkManager..."
-    apt-get install -y network-manager
-    apt-get clean
+    
+    echo "starting Network Manager
+    sysetemctl start NetworkManager
+    nmcli dev wifi connect SSID password "SSID password"
+    
+    # logging into 
+
+    #echo "Installing NetworkManager..."
+    #apt-get install -y network-manager
+    #apt-get clean
 }
 
 # This only works on Linux
 check_os_version
+
 
 # Confirm the user wants to install...
 read -r -p "Do you want to install? [y/N]: " response
@@ -47,6 +62,8 @@ response=${response,,}  # convert to lowercase
 if [[ ! $response =~ ^(yes|y)$ ]]; then
     exit 0
 fi
+
+
 
 # Update packages and install
 install_network_manager
