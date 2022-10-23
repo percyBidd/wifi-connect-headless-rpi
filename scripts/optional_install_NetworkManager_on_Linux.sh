@@ -31,7 +31,7 @@ install_network_manager () {
     
     echo "enabling Network Manager"
     systemctl enable NetworkManager
-    echo "disabling dhcpcd
+    echo "disabling dhcpcd..."
     systemctl disable dhcpcd
 
     
@@ -42,8 +42,11 @@ install_network_manager () {
     echo "Stopping dhcpcd..."
     systemctl stop dhcpcd
     
-    echo "starting Network Manager
-    sysetemctl start NetworkManager
+    echo "starting Network Manager"
+    systemctl start NetworkManager
+    echo " sleeping 15 seconds to allow Network Manager to collect SSID"
+    /bin/sleep 15
+    echo "now add the wifi command"
     nmcli dev wifi connect SSID password "SSID password"
     
     # logging into 
@@ -54,7 +57,7 @@ install_network_manager () {
 }
 
 # This only works on Linux
-check_os_version
+#check_os_version
 
 
 # Confirm the user wants to install...
