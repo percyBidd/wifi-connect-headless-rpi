@@ -33,6 +33,10 @@ fi
 # Remove any existing virtual environment
 rm -fr $TOPDIR/venv
 
+# installing pip3 and venv..  Raspberry lite does not have them
+apt-get install -y python3-pip
+apt-get install -y python3-venv
+
 # Create a virtual environment (venv)
 echo "Creating a python virtual environment..."
 python3 -m venv $TOPDIR/venv
