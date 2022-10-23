@@ -36,7 +36,8 @@ install_network_manager () {
 
     
     # sleeping for 30 seconds
-    echo "Sleeping 30 seconds, ctrl+z, disown, bg"
+    echo "Sleeping 30 seconds to push process into background"
+    echo " and allow wifi to drop: use ctrl+z (get job#), bg %job#, disown %job#"
     /bin/sleep 30
 
     echo "Stopping dhcpcd..."
