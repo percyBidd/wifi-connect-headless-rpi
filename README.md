@@ -1,9 +1,7 @@
 # python-wifi-connect-rpi
-An application that displays a wifi configuration UI for the reaspberry pi zero devices.   THe installation is written to work ONLY a headless (wifi) connection to the reaspberry pi zero.    
+An application that displays a wifi configuration UI for the reaspberry pi zero devices.   The installation is written to work when you only have a headless (wifi) connection to the reaspberry pi zero.    
 
-Inspired by:
-### 1. [wifi-connect](https://github.com/balena-io/wifi-connect) project written by [balena.io](https://www.balena.io/).
-### 2  [python-wifi-connect](https://github.com/OpenAgricultureFoundation/python-wifi-connect) and the source of fork
+Inspired by: [wifi-connect](https://github.com/balena-io/wifi-connect) project written by [balena.io](https://www.balena.io/) and [python-wifi-connect](https://github.com/OpenAgricultureFoundation/python-wifi-connect).
 
 # Install and Run
 
