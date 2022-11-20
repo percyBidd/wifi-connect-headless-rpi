@@ -142,7 +142,7 @@ def get_list_of_access_points():
                 continue
 
             # Don't add other PFC's to the list!
-            if ap.Ssid.startswith('EspressoConnectWifi'):
+            if ap.Ssid.startswith('Wifi-Connect-Rpi'):
                 continue
 
             ssids.append(entry)
@@ -157,7 +157,7 @@ def get_list_of_access_points():
 #------------------------------------------------------------------------------
 # Get hotspot SSID name.
 def get_hotspot_SSID():
-    return 'EspressoConnectWifi'+os.getenv('RESIN_DEVICE_NAME_AT_INIT',' ')
+    return 'Wifi-Connect-Rpi'
 
 
 #------------------------------------------------------------------------------
