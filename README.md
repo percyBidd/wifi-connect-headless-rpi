@@ -1,7 +1,7 @@
 # wifi-connect-headless-rpi
-An application that displays a wifi configuration UI for the reaspberry pi zero devices.   The installation is written to work when you only have a headless (wifi) connection to the reaspberry pi zero.    
+An application written in python that displays a wifi configuration UI for the reaspberry pi zero devices.   The installation is written to work when you only have a headless (wifi) connection to the reaspberry pi zero.    
 
-Inspired by: [wifi-connect](https://github.com/balena-io/wifi-connect) project written by [balena.io](https://www.balena.io/) and [python-wifi-connect](https://github.com/OpenAgricultureFoundation/python-wifi-connect).
+Inspired by [wifi-connect](https://github.com/balena-io/wifi-connect) project written by [balena.io](https://www.balena.io/) and forked from the [python-wifi-connect](https://github.com/OpenAgricultureFoundation/python-wifi-connect) written by [OpenAgricultureFoundation](https://github.com/OpenAgricultureFoundation) .
 
 # Install and Run
 
@@ -18,7 +18,7 @@ WiFi Connect detects available WiFi networks and opens an access point with a ca
 
 ### 2. Connect: User Connects Phone to Device Access Point
 
-Connect to the opened access point on the device from your mobile phone or laptop. The access point SSID is, by default, `PFC_EDU-<name>` where "name" is something random like "shy-lake" or "green-frog". 
+Connect to the opened access point on the device from your mobile phone or laptop. The access point SSID is, by default, `Wifi-Connect-Rpi`. 
 
 ### 3. Portal: Phone Shows Captive Portal to User
 
