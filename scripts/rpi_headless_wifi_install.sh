@@ -3,7 +3,7 @@
 echo "This script is will install NetworkManager on a headless (wifi) connected >"
 echo "It verifies NetworkManager is installed."
 echo "If not, installs it (and in the process disables the dhcpcd service)"
-echo ""
+echo " This script will work with raspbian 11 (bullseye) version"
 
 check_os_version () {
     if [[ "$OSTYPE" != "linux"* ]]; then
