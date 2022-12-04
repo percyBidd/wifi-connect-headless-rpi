@@ -13,5 +13,5 @@
 Rebooting the rpi will automatically run the ./run.sh script
 
 With a direct connection to the rpi, you can manually run the script. 
-Please read the [RUN.md](RUN.md) file.
+More info is also found at by reading the [RUN.md](RUN.md) file.
 
