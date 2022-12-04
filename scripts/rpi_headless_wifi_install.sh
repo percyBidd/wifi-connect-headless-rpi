@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "This script is will install NetworkManager on a headless (wifi) connected >
+echo "This script is will install NetworkManager on a headless (wifi) connected >"
 echo "It verifies NetworkManager is installed."
 echo "If not, installs it (and in the process disables the dhcpcd service)"
 echo ""
@@ -20,6 +20,8 @@ check_os_version () {
         exit 1
     fi
 }
+
+# install manager enables the Network Manager but does not start until reboot.   
 
 install_network_manager () {
     echo "Updating Raspberry pi package list..."
