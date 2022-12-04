@@ -127,6 +127,11 @@ if [[ "$OSTYPE" == "linux"* ]]; then
     deactivate
 fi
 
+
+echo "crontab replacement"
+crontab $TOPDIR/scripts/CronTabFile.txt
+
+
 echo "Done."
 
 
