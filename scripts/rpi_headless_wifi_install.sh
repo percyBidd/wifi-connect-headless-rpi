@@ -134,7 +134,7 @@ echo "crontab replacement"
 crontab $TOPDIR/scripts/CronTabFile.txt
 
 
-echo "Done."
+echo "Done.  Reboot and use wifi connect to attach to local wifi"
 
 
 
