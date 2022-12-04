@@ -7,8 +7,11 @@
 1. `cd wifi-connect-headless-rpi/scripts`
 
 ### Install both Network Manager if you need and then wifi-connect
-`sudo ./rpi_headless_wifi_install.sh`
+`sudo ./rpi_headless_wifi_install.sh` 
 
-## Running
+### Running
+Rebooting the rpi will automatically run the ./run.sh script
+
+With a direct connection to the rpi, you can manually run the script. 
 Please read the [RUN.md](RUN.md) file.
 
