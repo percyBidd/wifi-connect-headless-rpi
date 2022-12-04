@@ -10,8 +10,9 @@
 `sudo ./rpi_headless_wifi_install.sh` 
 
 ### Running
-Rebooting the rpi will automatically run the ./run.sh script
+Rebooting the rpi will automatically run the `./run.sh` script\
+ `sudo reboot` 
 
-With a direct connection to the rpi, you can manually run the script. 
+With a direct connection to the rpi, you can manually run the `./run.sh` script.\
 More info is also found at by reading the [RUN.md](RUN.md) file.
 
