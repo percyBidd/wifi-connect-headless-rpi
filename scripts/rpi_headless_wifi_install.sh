@@ -70,17 +70,6 @@ check_os_version
 # Update packages and install
 install_network_manager
 
-# Check OS we are running on.  NetworkManager only works on Linux.
-if [[ "$OSTYPE" != "linux"* ]]; then
-    echo "ERROR: This application only runs on Linux."
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        echo "WARNING: OSX is only supported for development/simulation."
-        echo "NetworkManager and DBUS won't install or work on OSX."
-    else
-        exit 1
-    fi
-fi
-
 # Save the path to THIS script (before we go changing dirs)
 # need to run script from the Script Directory
 TOPDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -88,13 +77,13 @@ TOPDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TOPDIR+=/..
 cd $TOPDIR
 
- installing pip3 and venv..  Raspberry lite does not have them
+# Installing pip3 and venv..  Raspberry lite does not have them
 echo "Installing python3-pip ... pip3 required"
 apt-get install -y python3-pip
 echo "Installing python3-venv ... vend required" 
 apt-get install -y python3-venv
 
-# Check if python3 and pip are installed
+# Check if python3 and pip installed correctly
 echo "Checking that python3 and pip are installed..."
 INSTALL_PATH=`which python3`
 if [[ ! -f "$INSTALL_PATH" ]]; then
@@ -127,7 +116,6 @@ if [[ "$OSTYPE" == "linux"* ]]; then
     deactivate
 fi
 
-
 echo "crontab replacement"
 
 # Define the filename
@@ -138,7 +126,8 @@ tmpfile='tempfile.txt'
 # read the current crontab (run in sudo mode)
 crontab -l > $tmpfile
 
-# test if the crontab does not already have run.sh
+# test if the crontab does not already have run.sh script 
+# if the install script was performed twice, the crontab may already have the script installed. 
 cat $tmpfile | grep run.sh
 
 if [[ $? == 1 ]]; then
@@ -161,7 +150,7 @@ fi
 rm  $tmpfile
 
 echo "Done. Reboot and use wifi-connect-headless-rpi to attach to local wifi"
-echo "Look for SSID Wifi-Connect-Rpi on local wifi rounter" 
+echo "Look for SSID Rpi-"$(hostname)" on local wifi rounter" 
 
 
 
