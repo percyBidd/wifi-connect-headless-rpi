@@ -142,7 +142,7 @@ def get_list_of_access_points():
                 continue
 
             # Don't add other PFC's to the list!
-            if ap.Ssid.startswith('Rpi-'+os.uname()[1]):
+            if ap.Ssid.startswith(os.uname()[1]):
                 continue
 
             ssids.append(entry)
