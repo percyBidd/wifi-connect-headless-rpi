@@ -8,7 +8,7 @@ from io import BytesIO
 # Local modules
 import netman
 import dnsmasq
-
+import subprocess
 # Defaults
 ADDRESS = '192.168.42.1'
 PORT = 80
@@ -264,7 +264,18 @@ if __name__ == "__main__":
     ui_path = UI_PATH
     delete_connections = False
     rcode = ''
-
+    try:
+        result = subprocess.run(
+            ['cat', f'/sys/class/net/wlan0/address'],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+        if result.returncode == 0:
+            rcode = result.stdout.strip().replace(':','')
+        
+    except Exception as e:
+        print(e)# f'Exception: {e}'
     usage = ''\
 f'Command line args: \n'\
 f'  -a <HTTP server address>     Default: {address} \n'\
