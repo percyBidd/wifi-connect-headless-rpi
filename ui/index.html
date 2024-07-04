@@ -45,9 +45,33 @@
       <div class="row reg-row">
         <div class="col-lg-8 col-lg-offset-1">
           <h3>Please write down this device registration code:</h3>
-          <input class="form-control" id="regcode" readonly value=""></input>
+          <input class="form-control" id="regcode"  readonly value=""></input>
           <p>You will need it to add your device to your account.</p>
         </div>
+        <script>
+          
+        async function Freg(){
+          const input = document.getElementById("regcode");
+          var RegDevice = "http://41.161.90.202:8081/"//Devices?" + input.value;
+          await sleep(300);
+          //input.value = RegDevice;
+          FConnect()
+          await sleep(5000);
+          location.replace(RegDevice);
+          
+        }
+        function sleep(time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+function FConnect() {
+  var x = document.getElementById("submit-message");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+      </script>
       </div>
 
       <div class="row before-submit">
@@ -90,17 +114,18 @@
 
             <div class="form-group">
               <div class="col-lg-6 col-lg-offset-1 text-center">
-                <button type='submit' class='btn btn-success'>Connect</button>
+                <button type='submit' onclick="Freg()" class='btn btn-success'>Connect</button>
               </div>
             </div>
           </form>
         </div>
       </div>
 
-      <div class="row hidden" id='submit-message'>
+      <div class="row " style="display: none;" id='submit-message'>
         <div class="col-lg-8 col-lg-offset-1">
           <h3>Applying changes...</h3>
           <p>Your device will soon be online. If connection is unsuccessful, the Access Point will be back up in a few minutes.</p>
+          <p>Redirecting you to the snapgaurd portal</p>
         </div>
       </div>
 
